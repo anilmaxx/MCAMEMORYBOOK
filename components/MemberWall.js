@@ -21,6 +21,11 @@ export default function MemberWall({ members, onMemberClick }) {
                <div className="member-photo-placeholder"><User size={40} /></div>
             )}
           <div className="member-name">{member.name || `24VV1F00${String(member.roll_number).padStart(2, '0')}`}</div>
+          {member.name && (
+            <div style={{ fontSize: '0.85em', color: '#666', marginTop: '4px', fontWeight: '500' }}>
+              24VV1F00{String(member.roll_number).padStart(2, '0')}
+            </div>
+          )}
           {member.signature_url && (
             <img src={member.signature_url} alt="Signature" className="member-signature" />
           )}
